@@ -4,3 +4,20 @@
 # чтобы все монетки были повернуты вверх одной и той же стороной. 
 # Выведите минимальное количество монет, которые нужно перевернуть
 
+from random import randint
+n = int(input("Введите число монеток: "))
+tails = 0
+eagle = 0
+count = 0
+for i in range(n):
+    x = randint(0, 1)
+    if x == 0:
+        eagle += 1
+    else:
+        tails += 1
+    print(x)
+if eagle > tails:
+    count = n - eagle
+else:
+    count = n - tails
+print('Минимальное количество монет, которые нужно перевернуть:', count)
